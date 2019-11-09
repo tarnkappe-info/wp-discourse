@@ -58,11 +58,20 @@ class HTMLTemplates {
 	public static function replies_html() {
 		ob_start();
 		?>
-		<div id="comments" class="comments-area discourse-comments-area">
-			<div class="comments-title-wrap">
-				<h2 class="comments-title discourse-comments-title"><?php echo esc_html( self::get_text_options( 'notable-replies-text' ) ); ?></h2>
-			</div>
-			<ol class="comment-list">{comments}</ol>
+<div id="comments" class="themeform">
+	
+		
+		<h3 class="heading">Kommentare</h3>
+	
+		<ul class="comment-tabs group">
+			<li class="active"><a><i class="far fa-comments"></i>Kommentare</a></li>
+		</ul>
+				<div id="commentlist-container" class="comment-tab comments-area discourse-comments-area">
+			
+			<ol class="commentlist">
+			<h2 class="comments-title discourse-comments-title"><?php echo esc_html( self::get_text_options( 'notable-replies-text' ) ); ?></h2>
+				<div id="commentlist-container" class="comment-tab">
+			<ol class="comment-list">{comments}</ol></div>
 			<div class="respond comment-respond">
 				<h3 id="reply-title" class="comment-reply-title">
 					<?php echo esc_html( self::get_text_options( 'continue-discussion-text' ) . ' ' ); ?>
@@ -75,6 +84,7 @@ class HTMLTemplates {
 				</div>
 			</div>
 		</div>
+</div>
 		<?php
 		$output = ob_get_clean();
 
@@ -96,7 +106,17 @@ class HTMLTemplates {
 	public static function no_replies_html( $discourse_comments_number = null ) {
 		ob_start();
 		?>
+<div id=" comments" class="themeform">
+	
+		
+		<h3 class="heading"><?php echo $discourse_comments_number - 1; ?> Kommentare</h3>
+	
+		<ul class="comment-tabs group">
+			<li class="active"><a href="#commentlist-container"><i class="far fa-comments"></i>Kommentare<span><?php echo $discourse_comments_number - 1; ?></span></a></li>
+		</ul>
 		<div id="comments" class="comments-area">
+				<div id="commentlist-container" class="comment-tab">
+		<ol class="commentlist">
 			<div class="respond comment-respond">
 				<h3 id="reply-title" class="comment-reply-title">
 					<?php
@@ -107,6 +127,8 @@ class HTMLTemplates {
 					</h3>
 			</div>
 		</div>
+</ol>
+</div></div>
 		<?php
 		$output = ob_get_clean();
 
@@ -154,24 +176,23 @@ class HTMLTemplates {
 	public static function comment_html( $even = true ) {
 		ob_start();
 		?>
-		<li class="comment <?php echo $even ? 'even' : 'odd'; ?> depth-1">
-			<article class="comment-body">
-				<footer class="comment-meta">
-					<div class="comment-author vcard">
+						<li class="comment even thread-even depth-1">
+				<div class="comment-body">
+				<div class="comment-author vcard">
 						<img alt="" src="{avatar_url}" class="avatar avatar-64 photo avatar-default"
 							 height="64"
-							 width="64">
-						<b class="fn"><a href="{topic_url}" rel="external"
-										 class="url">{username}</a></b>
-						<span class="says screen-reader-text"><?php echo esc_html( 'says:', 'wp-discourse' ); ?></span><!-- screen reader text -->
-					</div>
+							 width="64"> 
+						<b class="fn">{username}</b>
+						<span class="says screen-reader-text"><?php echo esc_html( 'schreibt:', 'wp-discourse' ); ?></span>
+</div><!-- screen reader text -->
+
 					<div class="comment-metadata">
-						<time datetime="{comment_created_at}">{comment_created_at}</time>
+						<a href="{comment_url}">{comment_created_at}</time></a>
 					</div>
-				</footer>
 				<div class="comment-content">{comment_body}</div>
-			</article>
-		</li>
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='{comment_url}'>Antworten</a></div>
+				</div>
+		</li><!-- #comment-## -->
 		<?php
 		$output = ob_get_clean();
 

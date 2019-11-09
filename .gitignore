@@ -12,3 +12,4 @@ wpcs/*
 
 *.sublime-workspace
 *.sublime-project
+/nbproject/private/
