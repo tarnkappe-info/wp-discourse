@@ -174,7 +174,7 @@ class DiscoursePublish {
 		$use_full_post               = ! empty( $options['full-post-content'] );
 		$use_multisite_configuration = is_multisite() && ! empty( $options['multisite-configuration-enabled'] );
 		$add_featured_link           = ! empty( $options['add-featured-link'] );
-		$permalink                   = get_permalink( $post_id );
+		$permalink                   = '## [Artikel ansehen]('.get_permalink( $post_id ).')';
 
 		if ( $use_full_post ) {
 			$excerpt = apply_filters( 'the_content', $raw );
