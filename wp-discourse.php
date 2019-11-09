@@ -4,13 +4,13 @@
  * Description: Use Discourse as a community engine for your WordPress blog
  * Version: 1.9.7
  * Author: Discourse
- * Text Domain: wp-discourse
+ * Text Domain: wp-discourse-Tarnkapp
  * Domain Path: /languages
- * Author URI: https://github.com/discourse/wp-discourse
- * Plugin URI: https://github.com/discourse/wp-discourse
- * GitHub Plugin URI: https://github.com/discourse/wp-discourse
+ * Author URI: https://github.com/tarnkappe-info/wp-discourse
+ * Plugin URI: https://github.com/tarnkappe-info/wp-discourse
+ * GitHub Plugin URI: https://github.com/tarnkappe-info/wp-discourse
  *
- * @package WPDiscourse
+ * @package WPDiscourseTarnkapp
  */
 
 /**  Copyright 2014 Civilized Discourse Construction Kit, Inc (team@discourse.org)
