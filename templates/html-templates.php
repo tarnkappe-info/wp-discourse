@@ -80,7 +80,6 @@ class HTMLTemplates {
 				<p class="more-replies">{more_replies}</p>
 				<div class="comment-reply-title">
 					<h4 class="discourse-participants"><?php echo esc_html( self::get_text_options( 'participants-text' ) ); ?></h4>
-					<p>{participants}</p>
 				</div>
 			</div>
 		</div>
