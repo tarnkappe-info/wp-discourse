@@ -237,9 +237,9 @@ class HTMLTemplates {
 	public static function publish_format_html( $post_id = null ) {
 		ob_start();
 		?>
-		<small><?php echo esc_html( self::get_text_options( 'published-at-text' ) ); ?>
+		<?php echo esc_html( self::get_text_options( 'published-at-text' ) ); ?>
 			{blogurl}
-		</small><br>{excerpt}
+		<br>{excerpt}
 		<?php
 		$output = ob_get_clean();
 
