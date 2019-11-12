@@ -237,8 +237,7 @@ class HTMLTemplates {
 		ob_start();
 		?>
 		<?php echo esc_html( self::get_text_options( 'published-at-text' ) ); ?>
-			{blogurl}
-		<br>{excerpt}
+			{blogurl}<br>{excerpt}
 		<?php
 		$output = ob_get_clean();
 
