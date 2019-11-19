@@ -58,7 +58,7 @@ class HTMLTemplates {
 	public static function replies_html() {
 		ob_start();
 		?>
-<div id="comments" class="themeform">
+<div id="respond" class="themeform">
 	
 		
 		<h3 class="heading">Kommentare</h3>
