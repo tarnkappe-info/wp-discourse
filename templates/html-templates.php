@@ -105,7 +105,7 @@ class HTMLTemplates {
 	public static function no_replies_html( $discourse_comments_number = null ) {
 		ob_start();
 		?>
-<div id=" comments" class="themeform">
+<div id="comments" class="themeform">
 	
 		
 		<h3 class="heading"><?php echo $discourse_comments_number - 1; ?> Kommentare</h3>
@@ -237,7 +237,8 @@ class HTMLTemplates {
 		ob_start();
 		?>
 		<?php echo esc_html( self::get_text_options( 'published-at-text' ) ); ?>
-			{blogurl}<br>{excerpt}
+{blogurl}<br>
+{excerpt}
 		<?php
 		$output = ob_get_clean();
 
