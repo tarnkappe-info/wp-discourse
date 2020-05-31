@@ -175,7 +175,9 @@ class DiscoursePublish {
 		$use_full_post               = ! empty( $options['full-post-content'] );
 		$use_multisite_configuration = is_multisite() && ! empty( $options['multisite-configuration-enabled'] );
 		$add_featured_link           = ! empty( $options['add-featured-link'] );
-		$permalink                   = '## [Artikel ansehen]('.get_permalink( $post_id ).')';
+		#$permalink                   = '[Artikel ansehen]('.get_permalink( $post_id ).')';
+		#$permalink                   = '[Artikel ansehen]('.get_permalink( $post_id ).')';
+		$permalink                   = get_permalink( $post_id );
 
 		if ( $use_full_post ) {
 			$excerpt = apply_filters( 'the_content', $raw );
@@ -197,7 +199,7 @@ class DiscoursePublish {
                 $excerpt = "";
 		$baked    = trim( Templates::publish_format_html( $post_id ) );
 		$baked    = str_replace( '{excerpt}', $excerpt, $baked );
-		$baked    = str_replace( '{blogurl}', $permalink, $baked );
+		$baked    = str_replace( '{blogurl}', '[Artikel ansehen]('.$permalink.')', $baked );
 		$author   = get_the_author_meta( 'display_name', $author_id );
 		$baked    = str_replace( '{author}', $author, $baked );
 		$thumb    = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'thumbnail' );
