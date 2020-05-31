@@ -59,7 +59,6 @@ class HTMLTemplates {
 		ob_start();
 		?>
 <div id="respond" class="themeform">
-	
 		
 		<h3 class="heading">Kommentare</h3>
 	
@@ -67,11 +66,8 @@ class HTMLTemplates {
 			<li class="active"><a><i class="far fa-comments"></i>Kommentare</a></li>
 		</ul>
 				<div id="commentlist-container" class="comment-tab comments-area discourse-comments-area">
-			
-			<ol class="commentlist">
-			<h2 class="comments-title discourse-comments-title"><?php echo esc_html( self::get_text_options( 'notable-replies-text' ) ); ?></h2>
-				<div id="commentlist-container" class="comment-tab">
-			<ol class="comment-list">{comments}</ol></div>
+                                    <ol class="commentlist">
+                                        {comments}</ol>
 			<div class="respond comment-respond">
 				<h3 id="reply-title" class="comment-reply-title">
 					<?php echo esc_html( self::get_text_options( 'continue-discussion-text' ) . ' ' ); ?>
@@ -115,7 +111,6 @@ class HTMLTemplates {
 		</ul>
 		<div id="comments" class="comments-area">
 				<div id="commentlist-container" class="comment-tab">
-		<ol class="commentlist">
 			<div class="respond comment-respond">
 				<h3 id="reply-title" class="comment-reply-title">
 					<?php
@@ -126,7 +121,6 @@ class HTMLTemplates {
 					</h3>
 			</div>
 		</div>
-</ol>
 </div></div>
 		<?php
 		$output = ob_get_clean();

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Publishes a post to Discourse.
  *
@@ -193,6 +194,7 @@ class DiscoursePublish {
 		}
 
 		// Trim to keep the Discourse markdown parser from treating this as code.
+                $excerpt = "";
 		$baked    = trim( Templates::publish_format_html( $post_id ) );
 		$baked    = str_replace( '{excerpt}', $excerpt, $baked );
 		$baked    = str_replace( '{blogurl}', $permalink, $baked );

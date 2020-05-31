@@ -370,7 +370,7 @@ class DiscourseComment {
 
 		$link_text = apply_filters( 'wpdc_join_discussion_link_text', $link_text, $comments_count, $post_id );
 
-		return '<div class="wpdc-join-discussion"><a class="wpdc-join-discussion-link" href="' . esc_url_raw( $discourse_permalink ) . '">' . esc_html( $link_text ) . '</a></div>';
+		return '<div class="wpdc-join-discussion themeform"><a rel="nofollow" target="_blank" href="' . esc_url_raw( $discourse_permalink ) . '"><button type="submit">' . esc_html( $link_text ) . '</button></a></div>';
 	}
 
 	/**
